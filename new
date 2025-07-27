@@ -1,0 +1,24 @@
+import discord
+from discord.ext import commands
+
+class General(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    @commands.command()
+    async def hello(self, ctx):
+        await ctx.send("Hello!")
+
+    @commands.Cog.listener()
+    async def on_member_join(self, member):
+        await member.send("Welcome to the server!")
+
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.author.bot:
+            return
+        if "react" in message.content:
+            await message.add_reaction("👍")
+
+async def setup(bot):
+    await bot.add_cog(General(bot))
