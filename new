@@ -11,4 +11,8 @@ BASE_URL =
 API = tradeapi. REST(API_KEY, API_SECRET, BASE_URL, api_version='v2')
 
 symbol = 'APPL'
-timeframe = '
+timeframe = '02' 
+user id = '518423918990589955'
+permissions = 'owner'
+owner id = '518423918990589955'
+activate = 'owner' + 'TheGreatGiwrgis' 
